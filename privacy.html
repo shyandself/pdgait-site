@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · PDGait</title>
+<meta name="description" content="PDGait 隐私政策：收集哪些数据、存储在哪里、如何删除。">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="privacy">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="PDGait">
+      <span>PDGait<small>GAIT DATA TOOL</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="product.html" data-nav="product">产品能力</a>
+      <a href="research.html" data-nav="research">研究验证</a>
+      <a href="download.html" data-nav="download">下载</a>
+      <a href="contact.html" data-nav="contact">联系我们</a>
+      <a class="nav-cta" href="download.html">获取 App</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="kicker">Privacy</div>
+    <h1>隐私政策</h1>
+    <p>生效日期：2026 年 10 月 19 日　｜　适用产品：PDGait Monitor Android 应用及本网站</p>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <p class="meta">本政策说明 PDGait 项目开发者（下称「我们」）如何收集、使用、存储和保护你的信息。我们把「数据默认留在本机」作为产品设计前提，而不是事后承诺。</p>
+
+      <h2 id="collect">一、我们收集哪些信息</h2>
+      <h3>1. 你主动填写的记录信息</h3>
+      <p>包括记录名称（可用化名）、性别、年龄、身高、采集位置、活动类型与备注。这些信息用于区分记录和计算与身高相关的步幅估计。</p>
+
+      <h3>2. 传感器原始数据</h3>
+      <p>记录期间的三轴加速度与三轴角速度（约 50 Hz）以及时间戳。这是步态参数计算的唯一输入。</p>
+
+      <h3>3. 匿名安装标识</h3>
+      <p>App 首次启动时生成一个随机 UUID，用于统计活跃设备数量与版本分布。它不是 IMEI、Android ID 或任何硬件标识；卸载重装会生成新的 UUID，我们无法用它反查你的身份。</p>
+
+      <h3>4. 应用版本与运行状态</h3>
+      <p>版本号、启动时间、上传结果等诊断信息，用于定位兼容性问题。</p>
+
+      <h2>二、我们不收集什么</h2>
+      <ul>
+        <li>不收集 IMEI、MAC 地址、Android ID 等设备唯一标识；</li>
+        <li>不收集精确定位、通讯录、短信、相册、通话记录；</li>
+        <li>不接入广告 SDK，不做用户画像，不向第三方出售或共享数据；</li>
+        <li>不在后台静默上传数据。</li>
+      </ul>
+
+      <h2 id="data">三、数据存储在哪里</h2>
+      <h3>1. 本地</h3>
+      <p>所有记录默认保存在手机应用私有目录的本地数据库中，只有本 App 可以访问。卸载 App 会删除本地数据。</p>
+
+      <h3>2. 云端（仅在你主动上传时）</h3>
+      <p>
+        当你点击「上传到云端」并完成上传后，该条记录的 CSV 文件会存储在中国大陆境内的腾讯云对象存储（南京地域）私有存储桶中。
+        传输过程使用 HTTPS；上传地址由云函数临时签发，有效期 10 分钟，且只能写入该条记录对应的路径。
+      </p>
+      <p>云端数据仅用于你个人的备份与后续取回，我们不会将其用于模型训练或对外提供，法律法规另有规定的除外。</p>
+
+      <h2>四、处理目的与法律依据</h2>
+      <ul>
+        <li>提供步态参数计算与展示功能（履行服务所必需）；</li>
+        <li>在你主动操作时完成数据备份（基于你的同意）；</li>
+        <li>保障服务安全、排查故障（正当利益，且限于最小必要范围）。</li>
+      </ul>
+
+      <h2>五、保留期限</h2>
+      <p>本地数据由你自行管理，删除即失效。云端数据默认长期保留以便你随时取回；你可以随时申请删除，我们将在核实身份与记录归属后 15 个工作日内处理。</p>
+
+      <h2>六、你的权利</h2>
+      <ul>
+        <li><strong>查阅与导出：</strong>在 App 内查看全部参数，并导出原始 CSV；</li>
+        <li><strong>更正：</strong>修改记录信息后可重新上传为新版本；</li>
+        <li><strong>删除：</strong>删除本地记录，或来信申请删除云端记录；</li>
+        <li><strong>撤回同意：</strong>停止使用上传功能即可，不影响此前的本地使用。</li>
+      </ul>
+      <p>行使上述权利请发送邮件至 <a href="mailto:privacy@pdgait.com.cn">privacy@pdgait.com.cn</a>。</p>
+
+      <h2>七、未成年人</h2>
+      <p>本产品面向 18 周岁及以上用户。未满 18 周岁的使用者应在监护人知情并同意的情况下使用；我们不会主动收集未成年人的信息。</p>
+
+      <h2>八、安全措施</h2>
+      <ul>
+        <li>存储桶为私有读写，不对外开放匿名访问；</li>
+        <li>云函数使用仅具备上传权限的子账号密钥，密钥不进入安装包；</li>
+        <li>上传采用一次性预签名地址，过期即失效；</li>
+        <li>开启操作审计与存储版本控制，降低误删与滥用风险。</li>
+      </ul>
+      <p>需要说明：任何系统都无法保证绝对安全。若发生影响你权益的安全事件，我们将依法告知。</p>
+
+      <h2>九、政策变更</h2>
+      <p>本政策更新时，我们会在本页更新生效日期；涉及收集范围或使用目的的重大变更，会在 App 内显著提示。</p>
+
+      <h2>十、联系我们</h2>
+      <p>PDGait 项目开发者<br>
+      邮箱：<a href="mailto:privacy@pdgait.com.cn">privacy@pdgait.com.cn</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px">
+          <img src="assets/logo.png" alt="PDGait">
+          <span>PDGait<small>GAIT DATA TOOL</small></span>
+        </a>
+        <p>步态数据记录与分析工具<br>个人开发者项目</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <a href="product.html">产品能力</a>
+        <a href="research.html">研究验证</a>
+        <a href="download.html">下载</a>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <a href="contact.html">联系我们</a>
+        <a href="privacy.html">隐私政策</a>
+        <a href="terms.html">用户协议</a>
+      </div>
+      <div>
+        <h4>合规</h4>
+        <a href="terms.html#medical">非医疗器械声明</a>
+        <a href="privacy.html#data">数据处理说明</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PDGait 项目 · 保留所有权利</span>
+      <span>皖ICP备XXXXXXXX号-1（备案中）</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

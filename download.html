@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下载 · PDGait</title>
+<meta name="description" content="下载 PDGait Android 版，查看版本信息、安装步骤与权限说明。">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="download">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="PDGait">
+      <span>PDGait<small>GAIT DATA TOOL</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="product.html" data-nav="product">产品能力</a>
+      <a href="research.html" data-nav="research">研究验证</a>
+      <a href="download.html" data-nav="download">下载</a>
+      <a href="contact.html" data-nav="contact">联系我们</a>
+      <a class="nav-cta" href="download.html">获取 App</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="kicker">Download</div>
+    <h1>下载 Android 版</h1>
+    <p>当前为内测分发版本，直接下载 APK 安装。无需注册账号。</p>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <div class="wrap">
+    <div class="card download-card">
+      <div>
+        <div class="version">Android · v5.3.0 · 2026-10-17</div>
+        <h2>PDGait Monitor</h2>
+        <p style="color:var(--ink-2);margin:0">
+          50 Hz 传感器采集、端侧步态分析、CSV 导出与按需云端备份。
+          支持 Android 8.0 及以上版本。
+        </p>
+        <div class="btn-row" style="margin-top:22px">
+          <a class="btn btn-primary" href="download/PDGaitMonitor-5.3.0.apk" download>下载 APK · 11 MB</a>
+          <a class="btn btn-ghost" style="border-color:var(--line);color:var(--ink-2)" href="contact.html">获取安装帮助</a>
+        </div>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:14px">
+          安装时系统可能提示「未知来源应用」，需在浏览器或文件管理器中允许本次安装。
+        </p>
+      </div>
+      <div>
+        <ul class="meta-list">
+          <li><span>版本号</span><span>5.3.0 (50300)</span></li>
+          <li><span>文件大小</span><span>10,746,473 字节</span></li>
+          <li><span>最低系统</span><span>Android 8.0</span></li>
+          <li><span>签名</span><span>release</span></li>
+        </ul>
+        <p style="font-size:11.5px;color:var(--muted);word-break:break-all;margin-top:14px;font-family:ui-monospace,Consolas,monospace">
+          SHA-256<br>99b15531452170e2d4bbc82f469a4db5<br>bd7cdc515b7777f11bc7fc9048656573
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="prose" style="max-width:860px">
+      <div class="kicker">Install</div>
+      <h2 style="margin-top:8px">安装与首次使用</h2>
+      <ol>
+        <li>下载 APK 后点击安装；如被拦截，在系统设置中允许当前应用「安装未知应用」。</li>
+        <li>首次打开授予「身体活动 / 传感器」相关权限。App 不申请位置、通讯录、相册权限。</li>
+        <li>把手机放进裤子口袋或上衣口袋，保持位置固定，点击「开始监测」。</li>
+        <li>等待起步检测通过，按日常速度连续行走 2 分钟以上。</li>
+        <li>停止后查看汇总参数与步速曲线；需要原始数据时在详情页导出 CSV。</li>
+      </ol>
+
+      <h3>位置怎么选</h3>
+      <p>
+        上衣口袋的 eHigh 重复性最好，适合做同人前后趋势；裤子口袋更接近日常行走状态，
+        但绝对值波动更大。无论选哪个，<strong>同一组比较里不要换位置</strong>。
+      </p>
+
+      <h3>权限说明</h3>
+      <ul>
+        <li><strong>传感器 / 身体活动：</strong>读取加速度与角速度，用于步态计算。</li>
+        <li><strong>通知（可选）：</strong>记录过程中显示前台状态，降低被系统回收的概率。</li>
+        <li><strong>网络（可选）：</strong>仅在你主动点击「上传到云端」时使用。</li>
+      </ul>
+
+      <h3>更新与回滚</h3>
+      <p>
+        新版本覆盖安装不会清除本地记录。若需要回滚，请先导出 CSV 备份；
+        降级安装需要卸载当前版本，本地数据会一并清除。
+      </p>
+
+      <div class="callout warn" style="margin-top:24px">
+        <strong>提醒：</strong>本产品不是医疗器械，不用于疾病诊断、治疗、监护或预防。
+        如果你有健康方面的疑问，请咨询专业医务人员。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <h2>装好了，先跑一条标准记录</h2>
+      <p>同一位置、同一设备、连续两分钟。有了基线，后面的变化才有参照。</p>
+      <a class="btn btn-primary" href="product.html">查看指标口径</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px">
+          <img src="assets/logo.png" alt="PDGait">
+          <span>PDGait<small>GAIT DATA TOOL</small></span>
+        </a>
+        <p>步态数据记录与分析工具<br>个人开发者项目</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <a href="product.html">产品能力</a>
+        <a href="research.html">研究验证</a>
+        <a href="download.html">下载</a>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <a href="contact.html">联系我们</a>
+        <a href="privacy.html">隐私政策</a>
+        <a href="terms.html">用户协议</a>
+      </div>
+      <div>
+        <h4>合规</h4>
+        <a href="terms.html#medical">非医疗器械声明</a>
+        <a href="privacy.html#data">数据处理说明</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PDGait 项目 · 保留所有权利</span>
+      <span>皖ICP备XXXXXXXX号-1（备案中）</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
