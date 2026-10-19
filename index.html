@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDGait · 步态数据记录与分析</title>
-<meta name="description" content="PDGait 使用手机内置传感器采集步态信号，计算步频、步幅、步时变异性与左右对称性等参数，供科研与个人运动数据记录使用。">
+<title>PDGait · 用手机记录步态数据</title>
+<meta name="description" content="一个个人项目：用 Android 手机采集步态信号，计算步频、步幅、步时变异性与左右对称性，并记录哪些指标经得起重复测量。">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,11 +18,11 @@
     </a>
     <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
     <div class="nav-links">
-      <a href="product.html" data-nav="product">产品能力</a>
-      <a href="research.html" data-nav="research">研究验证</a>
+      <a href="product.html" data-nav="product">指标与功能</a>
+      <a href="research.html" data-nav="research">验证记录</a>
       <a href="download.html" data-nav="download">下载</a>
-      <a href="contact.html" data-nav="contact">联系我们</a>
-      <a class="nav-cta" href="download.html">获取 App</a>
+      <a href="contact.html" data-nav="contact">联系</a>
+      <a class="nav-cta" href="download.html">装一个试试</a>
     </div>
   </div>
 </nav>
@@ -30,17 +30,17 @@
 <header class="hero">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">Mobile Gait Analytics</div>
-      <h1>把每一步，<br>变成<em>看得懂的数据</em></h1>
+      <div class="eyebrow">PDGait / 个人项目</div>
+      <h1>手机放进口袋，<br>能测出多少步态信息</h1>
       <p class="lead">
-        不需要额外硬件。一部放在口袋里的 Android 手机，持续采集三轴加速度，
-        输出步频、步幅、步时变异性、左右对称性与步态能量等参数。
+        这个项目只关心一件事：用普通 Android 手机采到的数据，哪些指标经得起重复测量，哪些换个口袋就变了。
+        现在有部分答案，也有一堆没解决的问题。
       </p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="download.html">下载 App</a>
-        <a class="btn btn-ghost" href="product.html">了解指标口径</a>
+        <a class="btn btn-primary" href="download.html">下载 Android 版</a>
+        <a class="btn btn-ghost" href="research.html">先看验证结果</a>
       </div>
-      <p class="hero-note"><strong>本产品不是医疗器械</strong>，不用于疾病诊断、治疗、监护或预防。</p>
+      <p class="hero-note"><strong>不是医疗器械</strong>，不用于疾病诊断、治疗或监护。</p>
     </div>
 
     <div class="device" aria-hidden="true">
@@ -69,9 +69,9 @@
   <div class="wrap">
     <div class="stats">
       <div class="stat"><b>50 Hz</b><span>手机 IMU 采样率</span></div>
-      <div class="stat"><b>10+</b><span>步态与变异性参数</span></div>
-      <div class="stat"><b>1,356</b><span>公开数据集验证试验段</span></div>
-      <div class="stat"><b>100%</b><span>原始数据留在本机</span></div>
+      <div class="stat"><b>1,356</b><span>段公开数据回放</span></div>
+      <div class="stat"><b>43</b><span>份合格的真实记录</span></div>
+      <div class="stat"><b>10</b><span>名健康受试者</span></div>
     </div>
   </div>
 </section>
@@ -79,25 +79,25 @@
 <section class="section alt">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">What it does</div>
-      <h2>三件事，做扎实</h2>
-      <p>采集、计算、存储各管一段。没有黑箱结论，每个数字都能追到原始信号。</p>
+      <div class="kicker">它做什么</div>
+      <h2>采集、算数、存起来</h2>
+      <p>没有云端分析，也没有 AI 诊断。手机算完就结束了，你看到的是原始信号和几组统计量。</p>
     </div>
     <div class="grid-3">
       <div class="card">
         <div class="icon">01</div>
-        <h3>端侧采集</h3>
-        <p>调用手机加速度传感器，带通滤波后做峰值与窗口能量分析。记录过程中实时显示步数与有效时间，信号中断会明确提示。</p>
+        <h3>采集</h3>
+        <p>手机放裤子口袋或上衣口袋，50 Hz 记录加速度和角速度。记录时屏幕可以关，误触会被锁掉。信号断了会当场提示，不会事后补一个漂亮的数。</p>
       </div>
       <div class="card">
         <div class="icon">02</div>
-        <h3>参数计算</h3>
-        <p>步频、步幅、步速、步时变异系数、左右相位与支撑期不对称、eLow / eHigh 步态能量、转身次数与时长。口径在文档中逐条写明。</p>
+        <h3>算指标</h3>
+        <p>常规的步频、步幅、步速，加上步时变异、左右相位与支撑期不对称、eLow / eHigh 和 PCI。每个参数怎么算、窗口多长，都在指标页写着。</p>
       </div>
       <div class="card">
         <div class="icon">03</div>
-        <h3>可控上传</h3>
-        <p>默认只存在手机本地。需要备份时，由用户逐条手动触发上传；App 内不保存任何云端密钥，上传地址一次一签、十分钟失效。</p>
+        <h3>存数据</h3>
+        <p>默认只写手机本地数据库。要备份才点上传，一条一条来。上传地址十分钟过期，安装包里不放任何密钥。</p>
       </div>
     </div>
   </div>
@@ -106,26 +106,26 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Workflow</div>
-      <h2>从放到口袋里，到拿到一份可复核的记录</h2>
-      <p>整个流程不需要配对设备，也不需要注册账号。</p>
+      <div class="kicker">一次记录</div>
+      <h2>大概是这样</h2>
+      <p>不需要注册，也不需要配对额外的传感器。</p>
     </div>
     <div class="flow">
       <div class="flow-item">
-        <h3>放置手机</h3>
-        <p>裤子口袋或上衣口袋，保持固定位置。位置会影响绝对值，跨次比较请用同一位置。</p>
+        <h3>放手机</h3>
+        <p>裤子口袋或上衣口袋，选一个。之后比较数据时别换位置，换位置等于换了一把尺子。</p>
       </div>
       <div class="flow-item">
-        <h3>开始记录</h3>
-        <p>等待起步检测通过后开始行走。App 会屏蔽误触，屏幕可息屏。</p>
+        <h3>开始走</h3>
+        <p>等起步检测通过，按平时速度走。两分钟以上比较稳，太短的记录噪声会盖过信号。</p>
       </div>
       <div class="flow-item">
-        <h3>查看参数</h3>
-        <p>停止后自动计算，展示汇总指标、步速曲线与逐段明细，可导出 CSV 原始数据。</p>
+        <h3>看结果</h3>
+        <p>停下后自动计算。详情页有汇总指标、步速曲线和逐段明细，原始数据可以导出 CSV。</p>
       </div>
       <div class="flow-item">
-        <h3>按需备份</h3>
-        <p>需要长期保存时再上传。上传成功前，数据始终完整保留在本地。</p>
+        <h3>要不要备份</h3>
+        <p>想长期保留就上传，不想就留在手机里。上传失败不影响本地记录，可以稍后再试。</p>
       </div>
     </div>
   </div>
@@ -135,24 +135,24 @@
   <div class="wrap">
     <div class="grid-2" style="align-items:start">
       <div>
-        <div class="kicker">Data & privacy</div>
-        <h2 style="font-size:30px;margin:0 0 14px">数据默认不出手机</h2>
+        <div class="kicker">数据</div>
+        <h2 style="font-size:30px;margin:0 0 14px">默认不出手机</h2>
         <p style="color:var(--ink-2);margin:0 0 18px">
-          步态数据能反映一个人的行动习惯，属于敏感信息。我们的默认设置是：
-          采集、计算、存储全部在端侧完成；只有你主动点「上传到云端」时，那一条记录才会离开手机。
+          步态数据能反映一个人的行动习惯，我不觉得它应该默认上云。
+          采集和计算都在手机里完成，只有你点「上传到云端」，那一条记录才会发出去。
         </p>
         <div class="callout">
-          <strong>上传链路：</strong>App 向云函数申请一次性上传地址 → 云函数校验口令后签发 10 分钟有效的预签名 URL →
-          App 直接把文件 PUT 到私有存储桶。密钥只存在云函数环境变量里，安装包里没有。
+          <strong>上传时发生的事：</strong>App 向云函数要一个一次性地址，云函数校验口令后签发十分钟有效的预签名 URL，
+          App 直接把文件 PUT 到私有存储桶。密钥只在云函数的环境变量里，安装包里没有。
         </div>
       </div>
       <div class="card" style="padding:30px">
-        <h3 style="margin-top:0">我们收集什么，不收集什么</h3>
+        <h3 style="margin-top:0">收了什么，没碰什么</h3>
         <ul style="padding-left:20px;color:var(--ink-2);font-size:14.5px;line-height:1.9;margin:0">
-          <li><strong>收集：</strong>你填写的记录信息（可用化名）、原始六轴数据、匿名安装 UUID。</li>
-          <li><strong>不收集：</strong>IMEI、Android ID、通讯录、位置、相册。</li>
-          <li><strong>不追踪：</strong>没有广告 SDK，没有第三方统计埋点。</li>
-          <li><strong>可删除：</strong>本地记录可直接删除；云端数据可来信申请清除。</li>
+          <li><strong>收：</strong>你填的记录信息（可以写化名）、原始六轴数据、一个匿名安装 UUID。</li>
+          <li><strong>不碰：</strong>IMEI、Android ID、通讯录、位置、相册。</li>
+          <li><strong>没有：</strong>广告 SDK，第三方统计埋点。</li>
+          <li><strong>可删：</strong>本地记录随时删；云端数据可以来信申请清除。</li>
         </ul>
       </div>
     </div>
@@ -162,36 +162,37 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Validation</div>
-      <h2>算法经过公开数据与真实采集验证</h2>
-      <p>以下为内部研究报告的规模与方法摘要，不是临床结论，也不构成任何医疗建议。</p>
+      <div class="kicker">验证</div>
+      <h2>做验证时，有四件事比较意外</h2>
+      <p>完整方法和样本量在验证记录里。这里先说结论，包括对产品不利的那几条。</p>
     </div>
-    <div class="grid-3">
+    <div class="grid-2">
       <div class="card">
-        <div class="icon">A</div>
-        <h3>公开数据集回放</h3>
-        <p>1,356 个步态试验段、100 Hz 参考设备数据，用于核对计步、转身与冻结相关检测的误差边界。</p>
+        <h3 style="margin-top:0">口径不同，变异能差 2.78 倍</h3>
+        <p>同一批数据，按帧统计和按步统计算出来的步时变异系数，差 2.78 倍。两个数字都不算错，但放在一起比就没有意义。</p>
       </div>
       <div class="card">
-        <div class="icon">B</div>
-        <h3>专家标注对照</h3>
-        <p>22 名受试者、60 Hz 采集、逐帧人工标注，用于评估窗口级检测的灵敏度与误报。</p>
+        <h3 style="margin-top:0">换个口袋，eHigh 最多差 2.37 倍</h3>
+        <p>同一个人、同一台手机，只把手机从裤子口袋挪到上衣口袋，eHigh 的中位差异是 1.49 倍，最大 2.37 倍。</p>
       </div>
       <div class="card">
-        <div class="icon">C</div>
-        <h3>健康人参考区间</h3>
-        <p>53 份实际扫描、43 份合格记录、10 名健康受试者，建立不同放置位置的参数参考区间与最小可检测变化。</p>
+        <h3 style="margin-top:0">换台手机，eLow 中位差 0.60 倍</h3>
+        <p>同人同位置换机型，eLow 的中位比值是 0.60，eHigh 最大差 1.88 倍。跨设备比趋势，目前不成立。</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">只有一种组合够稳，能做前后比较</h3>
+        <p>分层算完最小可检测变化，只有「上衣口袋 + eHigh」的 MDC95 是 1.27 倍，噪声小于真实变化。其余组合，先别急着解读。</p>
       </div>
     </div>
-    <p style="margin-top:26px"><a href="research.html">查看验证方法与结果摘要 →</a></p>
+    <p style="margin-top:26px"><a href="research.html">看验证方法和样本量 →</a></p>
   </div>
 </section>
 
 <section class="section alt">
   <div class="wrap">
     <div class="cta">
-      <h2>先跑通一条记录，再谈长期趋势</h2>
-      <p>下载后无需注册，三步即可完成第一次采集。所有参数与原始数据都在你手里。</p>
+      <h2>先测一条，看看数据长什么样</h2>
+      <p>第一次建议走上衣口袋，重复性最好。走两分钟，比走二十秒有用得多。</p>
       <a class="btn btn-primary" href="download.html">下载 Android 版</a>
     </div>
   </div>
@@ -207,17 +208,17 @@
           <img src="assets/logo.png" alt="PDGait">
           <span>PDGait<small>GAIT DATA TOOL</small></span>
         </a>
-        <p>步态数据记录与分析工具<br>个人开发者项目</p>
+        <p>手机步态数据记录工具<br>个人开发者项目</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="product.html">产品能力</a>
-        <a href="research.html">研究验证</a>
+        <a href="product.html">指标与功能</a>
+        <a href="research.html">验证记录</a>
         <a href="download.html">下载</a>
       </div>
       <div>
         <h4>支持</h4>
-        <a href="contact.html">联系我们</a>
+        <a href="contact.html">联系</a>
         <a href="privacy.html">隐私政策</a>
         <a href="terms.html">用户协议</a>
       </div>

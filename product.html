@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>产品能力 · PDGait</title>
-<meta name="description" content="PDGait 的采集方式、参数定义与口径说明：步频、步幅、步时变异性、左右对称性、步态能量与转身检测。">
+<title>指标与功能 · PDGait</title>
+<meta name="description" content="PDGait 每个步态参数的定义、计算窗口和适用范围，以及 App 里能做的操作。">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,71 +18,66 @@
     </a>
     <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
     <div class="nav-links">
-      <a href="product.html" data-nav="product">产品能力</a>
-      <a href="research.html" data-nav="research">研究验证</a>
+      <a href="product.html" data-nav="product">指标与功能</a>
+      <a href="research.html" data-nav="research">验证记录</a>
       <a href="download.html" data-nav="download">下载</a>
-      <a href="contact.html" data-nav="contact">联系我们</a>
-      <a class="nav-cta" href="download.html">获取 App</a>
+      <a href="contact.html" data-nav="contact">联系</a>
+      <a class="nav-cta" href="download.html">装一个试试</a>
     </div>
   </div>
 </nav>
 
 <header class="page-head">
   <div class="wrap">
-    <div class="kicker">Product</div>
-    <h1>产品能力与指标口径</h1>
-    <p>一个参数只有把定义、计算窗口和适用边界写清楚，才有比较的意义。这一页就是我们的口径声明。</p>
+    <div class="kicker">指标</div>
+    <h1>每个数字是怎么来的</h1>
+    <p>不写清楚定义和统计窗口，两个数就没法比较。这一页把这些事说明白，也说明哪些比较目前不成立。</p>
   </div>
 </header>
 
 <main>
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Metrics</div>
-      <h2>指标定义</h2>
-      <p>下列参数均由端侧算法从 50 Hz 三轴加速度中计算，不依赖云端。</p>
-    </div>
     <table class="metric-table">
       <thead>
-        <tr><th>参数</th><th>单位 / 量纲</th><th>定义与计算方式</th></tr>
+        <tr><th>参数</th><th>单位</th><th>怎么算的</th></tr>
       </thead>
       <tbody>
         <tr>
           <td>步数 / 步频</td><td>步、步/分</td>
-          <td>带通滤波后的峰值检测；步频 = 有效步数 ÷ 行走时长。</td>
+          <td>带通滤波后找峰。步频 = 有效步数 ÷ 行走时长，转身和停顿不算进去。</td>
         </tr>
         <tr>
           <td>步幅 / 步速</td><td>m、m/s</td>
-          <td>步幅由步频与身高相关的回归模型估算，不是直接测距；步速 = 步频 × 步幅。跨设备比较需谨慎。</td>
+          <td>步幅由步频和身高回归估算，不是测距。步速 = 步频 × 步幅。换手机比这两个数要小心。</td>
         </tr>
         <tr>
           <td>步时变异 CV</td><td>%</td>
-          <td>相邻步间期标准差 ÷ 均值。按行走段统计，剔除转身与停顿。</td>
+          <td>相邻步间期的标准差除以均值。只统计行走段，转身和停顿先剔掉。</td>
         </tr>
         <tr>
           <td>相位不对称</td><td>%</td>
-          <td>左右脚步态周期相位差的绝对值，归一化到周期长度。</td>
+          <td>左右脚步态周期的相位差绝对值，归一化到周期长度。</td>
         </tr>
         <tr>
           <td>支撑期不对称</td><td>%</td>
-          <td>左右脚支撑相时长之差 ÷ 两者均值。</td>
+          <td>左右脚支撑相时长之差，除以两者的均值。</td>
         </tr>
         <tr>
           <td>eLow / eHigh</td><td>无量纲</td>
-          <td>两个频带的滑动窗能量：eLow 对应身体重心低频摆动，eHigh 对应步态冲击的高频成分。二者是能量量纲，绝对值受放置位置与机型影响，只适合同人同位置的前后比较。</td>
+          <td>两个频带的滑动窗能量。eLow 对应重心低频摆动，eHigh 对应落地冲击的高频成分。它们是能量值，换位置、换机型都会变，只适合同人同位置的前后比较。</td>
         </tr>
         <tr>
           <td>PCI</td><td>无量纲</td>
-          <td>相位协调指数，衡量左右下肢运动的协调程度，由连续相位估计得到。</td>
+          <td>相位协调指数，从连续相位估计左右下肢的协调程度。绝对值受检测质量影响，看趋势比看单次值靠谱。</td>
         </tr>
         <tr>
-          <td>转身次数 / 时长</td><td>次、秒</td>
-          <td>由水平面角速度与轴向变化检测转身区间，输出次数与每次持续时间。</td>
+          <td>转身</td><td>次、秒</td>
+          <td>用水平面角速度和轴向变化找转身区间，输出次数和每次时长。</td>
         </tr>
         <tr>
           <td>有效时间</td><td>%</td>
-          <td>100% 减去插值填充率。低于 75% 的记录会在详情页标红提示。</td>
+          <td>100% 减去插值填充率。低于 75% 会在详情页标红，这种记录最好重测。</td>
         </tr>
       </tbody>
     </table>
@@ -92,39 +87,34 @@
 <section class="section alt">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Capabilities</div>
+      <div class="kicker">功能</div>
       <h2>App 里能做什么</h2>
+      <p>功能不多，每个都尽量做到能用。</p>
     </div>
     <div class="grid-3">
       <div class="card">
-        <div class="icon">◉</div>
-        <h3>实时记录</h3>
-        <p>起步检测、暂停与继续、信号中断提示、屏幕常亮与防误触锁定。记录中随时看到步数与有效时间。</p>
+        <h3>记录</h3>
+        <p>起步检测、暂停继续、断流提示。记录时屏幕可以常亮，也可以锁掉防误触，两种都行。</p>
       </div>
       <div class="card">
-        <div class="icon">▤</div>
-        <h3>结果详情</h3>
-        <p>汇总卡片、步速曲线、逐段明细。可展开查看转身区间与信号质量标记，不需要的图可以收起。</p>
+        <h3>看结果</h3>
+        <p>汇总指标、步速曲线、逐段明细。转身区间可以在图上展开看，不需要的话收起来。</p>
       </div>
       <div class="card">
-        <div class="icon">↧</div>
-        <h3>数据导出</h3>
-        <p>原始六轴数据可导出为 CSV，带完整表头与记录信息，便于用 Python / R / Excel 自行复核。</p>
+        <h3>导出</h3>
+        <p>原始六轴数据导出 CSV，带表头和记录信息。想用 Python、R 或 Excel 自己复核都行。</p>
       </div>
       <div class="card">
-        <div class="icon">☁</div>
-        <h3>按需备份</h3>
-        <p>逐条手动上传，显示进度与结果。上传失败不影响本地数据，可以稍后重试。</p>
+        <h3>上传</h3>
+        <p>一条一条手动传，有进度和结果。失败了本地数据还在，换个网络再试。</p>
       </div>
       <div class="card">
-        <div class="icon">◷</div>
-        <h3>记录管理</h3>
-        <p>按时间归档，可补充记录信息、修改备注。修改后可重新上传为新版本，旧版本有据可查。</p>
+        <h3>整理记录</h3>
+        <p>按时间归档，可以补记录信息、改备注。改完重新上传会生成新版，旧版保留。</p>
       </div>
       <div class="card">
-        <div class="icon">⌁</div>
-        <h3>离线优先</h3>
-        <p>无网络也能完整使用。所有计算在本机完成，不上传原始信号也能看到全部参数。</p>
+        <h3>离线</h3>
+        <p>没网也能完整使用。计算全部在本机，不上传也能看到所有参数。</p>
       </div>
     </div>
   </div>
@@ -133,16 +123,16 @@
 <section class="section">
   <div class="wrap">
     <div class="prose">
-      <div class="kicker">Boundaries</div>
-      <h2 style="margin-top:8px">使用边界，先说清楚</h2>
+      <div class="kicker">边界</div>
+      <h2 style="margin-top:8px">用之前需要知道的四件事</h2>
       <ul>
-        <li><strong>放置位置影响绝对值。</strong>裤子口袋与上衣口袋的 eHigh 可以相差一倍以上。做趋势比较时，请固定位置与手机型号。</li>
-        <li><strong>手机不是实验室设备。</strong>不同机型的传感器量程、噪声与采样稳定性不同，参数不能跨设备直接对比。</li>
-        <li><strong>算法口径会改变数值。</strong>按帧统计与按步统计的变异指标可以相差数倍。本站与 App 内展示的数字均注明口径。</li>
-        <li><strong>参数不是结论。</strong>App 只呈现数值与趋势，不做分级、报警或判断，也不替代任何专业人员的解读。</li>
+        <li><strong>位置影响绝对值。</strong>裤子口袋和上衣口袋的 eHigh 能差一倍以上。要做趋势，固定位置和手机型号。</li>
+        <li><strong>手机不是实验室设备。</strong>不同机型的传感器量程和噪声不一样，参数不能跨设备直接比。</li>
+        <li><strong>统计口径会改数字。</strong>按帧和按步算出来的变异指标能差几倍。看到数字先问口径。</li>
+        <li><strong>参数不是结论。</strong>App 只显示数值和趋势，不做分级、不报警、不给建议。</li>
       </ul>
       <div class="callout warn" style="margin-top:22px">
-        <strong>非医疗器械声明：</strong>本产品为运动数据记录工具，不针对任何疾病人群，
+        <strong>非医疗器械声明：</strong>这是运动数据记录工具，不针对任何疾病人群，
         不提供疾病诊断、治疗、监护、预防或缓解相关的结论与建议。
       </div>
     </div>
@@ -152,8 +142,8 @@
 <section class="section alt">
   <div class="wrap">
     <div class="cta">
-      <h2>口径都写明白了，再谈数据</h2>
-      <p>下载后先做一次标准采集：同一位置、同一设备、连续行走 2 分钟以上。</p>
+      <h2>看懂了再去测</h2>
+      <p>第一次建议走上衣口袋，走两分钟以上。同一位置、同一台手机，数据才有前后可比性。</p>
       <a class="btn btn-primary" href="download.html">下载 Android 版</a>
     </div>
   </div>
@@ -168,17 +158,17 @@
           <img src="assets/logo.png" alt="PDGait">
           <span>PDGait<small>GAIT DATA TOOL</small></span>
         </a>
-        <p>步态数据记录与分析工具<br>个人开发者项目</p>
+        <p>手机步态数据记录工具<br>个人开发者项目</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="product.html">产品能力</a>
-        <a href="research.html">研究验证</a>
+        <a href="product.html">指标与功能</a>
+        <a href="research.html">验证记录</a>
         <a href="download.html">下载</a>
       </div>
       <div>
         <h4>支持</h4>
-        <a href="contact.html">联系我们</a>
+        <a href="contact.html">联系</a>
         <a href="privacy.html">隐私政策</a>
         <a href="terms.html">用户协议</a>
       </div>

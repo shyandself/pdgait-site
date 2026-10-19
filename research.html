@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>研究验证 · PDGait</title>
-<meta name="description" content="PDGait 算法的验证方法、公开数据集规模、重复性研究与参数参考区间摘要。">
+<title>验证记录 · PDGait</title>
+<meta name="description" content="PDGait 的验证过程：公开数据集回放、专家标注对照、真实手机采集的重复性研究，以及已知局限。">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,20 +18,20 @@
     </a>
     <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
     <div class="nav-links">
-      <a href="product.html" data-nav="product">产品能力</a>
-      <a href="research.html" data-nav="research">研究验证</a>
+      <a href="product.html" data-nav="product">指标与功能</a>
+      <a href="research.html" data-nav="research">验证记录</a>
       <a href="download.html" data-nav="download">下载</a>
-      <a href="contact.html" data-nav="contact">联系我们</a>
-      <a class="nav-cta" href="download.html">获取 App</a>
+      <a href="contact.html" data-nav="contact">联系</a>
+      <a class="nav-cta" href="download.html">装一个试试</a>
     </div>
   </div>
 </nav>
 
 <header class="page-head">
   <div class="wrap">
-    <div class="kicker">Research</div>
-    <h1>我们怎么验证这些数字</h1>
-    <p>手机步态分析最容易犯的错，是把「算出数」当成「算得准」。这一页公开我们的验证方法、样本规模与已知局限。</p>
+    <div class="kicker">验证记录</div>
+    <h1>这些数字是怎么验的</h1>
+    <p>用了什么数据、样本多大、哪些结论站得住、哪些还站不住，都写在这里。</p>
   </div>
 </header>
 
@@ -39,9 +39,9 @@
 <section class="section">
   <div class="wrap">
     <div class="stats">
-      <div class="stat"><b>1,356</b><span>公开数据集试验段</span></div>
-      <div class="stat"><b>22</b><span>专家逐帧标注受试者</span></div>
-      <div class="stat"><b>53</b><span>真实采集扫描份数</span></div>
+      <div class="stat"><b>1,356</b><span>段公开数据</span></div>
+      <div class="stat"><b>22</b><span>名专家标注受试者</span></div>
+      <div class="stat"><b>53</b><span>份真实扫描</span></div>
       <div class="stat"><b>18</b><span>人 × 位置组合</span></div>
     </div>
   </div>
@@ -50,27 +50,29 @@
 <section class="section alt">
   <div class="wrap">
     <div class="prose" style="max-width:860px">
-      <div class="kicker">Method</div>
-      <h2 style="margin-top:8px">三层验证</h2>
-
-      <h3>一、公开数据集回放</h3>
+      <h2 style="margin-top:0">验证顺序</h2>
       <p>
-        使用带参考设备与人工标注的公开步态数据集做离线回放：1,356 个试验段、100 Hz 采样，
-        覆盖不同行走速度与转身场景。核对计步误差、转身命中率与窗口级检测的灵敏度、误报率。
-        所有阈值在交叉验证中确定，避免在同一批数据上既调参又报成绩。
+        先从公开数据集开始，再做真实手机采集。前者能快速摸清算法边界，后者才能回答一个问题：
+        把手机放进口袋，这些数字还剩多少可信度。
       </p>
 
-      <h3>二、专家标注对照</h3>
+      <h3>公开数据回放</h3>
       <p>
-        22 名受试者、60 Hz 采集、逐帧人工标注。用于评估滑动窗口检测在真实噪声下的表现，
-        并区分「检出」与「误报」两类错误。窗口级指标与事件级指标分开报告，不混用。
+        1,356 个试验段，参考设备 100 Hz 采样，覆盖不同速度和转身。核对计步误差、转身命中率，
+        以及窗口级检测的灵敏度和误报。阈值在交叉验证里定，不在同一批数据上又调参又报成绩。
       </p>
 
-      <h3>三、真实手机采集的重复性研究</h3>
+      <h3>专家标注对照</h3>
       <p>
-        53 份实际扫描、43 份合格记录、10 名健康受试者、18 个人与位置的组合。
-        目的不是证明「能测出差异」，而是先回答一个更基础的问题：
-        <strong>同一台手机、同一个人、换一个口袋，数字会变多少？</strong>
+        22 名受试者，60 Hz 采集，逐帧人工标注。看两件事：检出多少，误报多少。
+        窗口级指标和事件级指标分开报，不混着说。
+      </p>
+
+      <h3>真实手机采集</h3>
+      <p>
+        53 份扫描，43 份合格，10 名健康受试者，18 个人和位置的组合。
+        目的不是证明能测出差异，而是先回答一个更基本的问题：
+        同一个人、同一台手机，换个口袋，数字会变多少。
       </p>
     </div>
   </div>
@@ -79,26 +81,26 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Findings</div>
-      <h2>四条会影响你读数的方法学结论</h2>
-      <p>这些结论有些对我们不利，但不说清楚，用户就会误读数字。</p>
+      <div class="kicker">结果</div>
+      <h2>四条影响读数的方法学结论</h2>
+      <p>有几条对产品不利，但不写出来，用户就会误读。</p>
     </div>
     <div class="grid-2">
       <div class="card">
-        <h3 style="margin-top:0">1. 口径能把变异放大 2.78 倍</h3>
-        <p>同一批数据，按帧统计与按步统计得到的步时变异系数可以相差 2.78 倍。对外报数必须同时声明口径，否则两个「都正确」的数字无法比较。</p>
+        <h3 style="margin-top:0">口径能把变异放大 2.78 倍</h3>
+        <p>同一批数据，按帧统计和按步统计得到的步时变异系数相差 2.78 倍。两个数都不算错，但放在一起比就没有意义。</p>
       </div>
       <div class="card">
-        <h3 style="margin-top:0">2. 换口袋，eHigh 最多差 2.37 倍</h3>
-        <p>同一个人、同一台手机，仅改变放置位置，eHigh 的中位差异为 1.49 倍，最大 2.37 倍。因此不同位置的绝对值不能直接比较。</p>
+        <h3 style="margin-top:0">换口袋，eHigh 最多差 2.37 倍</h3>
+        <p>同一个人、同一台手机，只改变放置位置，eHigh 的中位差异是 1.49 倍，最大 2.37 倍。不同位置的绝对值不能直接比。</p>
       </div>
       <div class="card">
-        <h3 style="margin-top:0">3. 换手机，eLow 中位差 0.60 倍</h3>
-        <p>同人同位置换用不同机型，eLow 的中位比值为 0.60，eHigh 最大差异 1.88 倍。跨设备趋势比较目前不成立。</p>
+        <h3 style="margin-top:0">换手机，eLow 中位差 0.60 倍</h3>
+        <p>同人同位置换机型，eLow 的中位比值是 0.60，eHigh 最大差 1.88 倍。跨设备比趋势，目前不成立。</p>
       </div>
       <div class="card">
-        <h3 style="margin-top:0">4. 只有一种组合够稳定做趋势</h3>
-        <p>在分层参考区间与最小可检测变化（MDC95）分析中，仅「上衣口袋 + eHigh」的 MDC95 为 1.27 倍，可用于同人前后趋势；其余组合的噪声大于真实变化。</p>
+        <h3 style="margin-top:0">只有一种组合够稳</h3>
+        <p>分层算完最小可检测变化，只有「上衣口袋 + eHigh」的 MDC95 是 1.27 倍。其余组合的噪声大于真实变化，先别解读。</p>
       </div>
     </div>
   </div>
@@ -107,24 +109,23 @@
 <section class="section alt">
   <div class="wrap">
     <div class="prose" style="max-width:860px">
-      <div class="kicker">Limitations</div>
-      <h2 style="margin-top:8px">已知局限</h2>
+      <h2 style="margin-top:0">已知局限</h2>
       <ul>
-        <li>参考区间来自小样本健康受试者（10 人），只能作为内部质控基线，不构成人群常模。</li>
-        <li>步幅为模型估算值，未做走道测距的金标准校准。</li>
-        <li>手机型号与佩戴松紧度未完全分层，剩余混杂因素仍然存在。</li>
-        <li>公开数据集的采样率与手机端不同，回放结果不能直接等同于手机端性能。</li>
-        <li>所有结果均为研究性质，未经临床验证，不用于任何医疗决策。</li>
+        <li>参考区间只有 10 名健康受试者，只能当内部质控基线，不是人群常模。</li>
+        <li>步幅是模型估算，没做走道测距的金标准校准。</li>
+        <li>手机型号和佩戴松紧度没有完全分层，混杂因素还在。</li>
+        <li>公开数据集的采样率和手机端不同，回放结果不能直接当成手机端性能。</li>
+        <li>全部结果都是研究性质，没有经过临床验证，不用于任何医疗决策。</li>
       </ul>
 
-      <h2>数据与代码</h2>
+      <h2>数据和脚本</h2>
       <p>
-        原始数据格式为 CSV，包含时间戳、三轴加速度与三轴角速度，表头带记录信息。
-        分析脚本与图表可复现；如需用于科研合作，请通过<a href="contact.html">联系我们</a>说明用途与数据范围。
+        原始数据是 CSV，包含时间戳、三轴加速度和三轴角速度，表头带记录信息。
+        分析脚本和图表可以复现。要用于科研合作，请说明机构、用途、数据范围和伦理审批情况。
       </p>
 
       <div class="callout" style="margin-top:24px">
-        <strong>声明：</strong>本页所有数字来自内部研究记录，属于方法学验证，不是临床试验结果，
+        <strong>声明：</strong>以上数字来自内部研究记录，属于方法学验证，不是临床试验结果，
         不构成对任何疾病筛查、诊断或疗效的判断。
       </div>
     </div>
@@ -134,9 +135,9 @@
 <section class="section">
   <div class="wrap">
     <div class="cta">
-      <h2>需要方法学细节或原始图表？</h2>
-      <p>我们可以提供指标定义、验证方案与可复现脚本的说明文档，供同行评议或合作评估使用。</p>
-      <a class="btn btn-primary" href="contact.html">发起合作咨询</a>
+      <h2>需要方法细节或原始图表</h2>
+      <p>指标定义、验证方案和可复现脚本都可以提供给同行评议或合作评估使用。</p>
+      <a class="btn btn-primary" href="contact.html">发邮件说明用途</a>
     </div>
   </div>
 </section>
@@ -150,17 +151,17 @@
           <img src="assets/logo.png" alt="PDGait">
           <span>PDGait<small>GAIT DATA TOOL</small></span>
         </a>
-        <p>步态数据记录与分析工具<br>个人开发者项目</p>
+        <p>手机步态数据记录工具<br>个人开发者项目</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="product.html">产品能力</a>
-        <a href="research.html">研究验证</a>
+        <a href="product.html">指标与功能</a>
+        <a href="research.html">验证记录</a>
         <a href="download.html">下载</a>
       </div>
       <div>
         <h4>支持</h4>
-        <a href="contact.html">联系我们</a>
+        <a href="contact.html">联系</a>
         <a href="privacy.html">隐私政策</a>
         <a href="terms.html">用户协议</a>
       </div>
