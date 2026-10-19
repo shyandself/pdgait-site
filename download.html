@@ -4,25 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>下载 · PDGait</title>
-<meta name="description" content="下载 PDGait Android 版，版本信息、安装步骤和权限说明。">
+<meta name="description" content="下载 PDGait Android 版，查看版本信息、安装步骤和权限说明。">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="download">
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="PDGait">
-      <span>PDGait<small>GAIT DATA TOOL</small></span>
+      <img src="assets/logo.png" alt="">
+      <span>PDGait<small>Gait Analytics</small></span>
     </a>
-    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <div class="nav-links">
-      <a href="product.html" data-nav="product">指标与功能</a>
-      <a href="research.html" data-nav="research">验证记录</a>
+      <a href="product.html" data-nav="product">产品</a>
+      <a href="research.html" data-nav="research">技术与验证</a>
       <a href="download.html" data-nav="download">下载</a>
       <a href="contact.html" data-nav="contact">联系</a>
-      <a class="nav-cta" href="download.html">装一个试试</a>
+      <a class="btn btn-primary btn-sm" href="download.html">下载 App</a>
     </div>
   </div>
 </nav>
@@ -31,38 +34,33 @@
   <div class="wrap">
     <div class="kicker">下载</div>
     <h1>Android 版</h1>
-    <p>内测分发，直接装 APK。不用注册账号。</p>
+    <p>内测分发，直接装 APK。不用注册账号，装好就能记录。</p>
   </div>
 </header>
 
-<main>
+<main id="main">
+
 <section class="section">
   <div class="wrap">
-    <div class="card download-card">
+    <div class="download-hero reveal">
       <div>
-        <div class="version">v5.3.0 · 2026-10-17 · Android 8.0 及以上</div>
+        <div class="version">v5.3.0 · 2026-10-17</div>
         <h2>PDGait Monitor</h2>
-        <p style="color:var(--ink-2);margin:0">
-          50 Hz 采集，端侧算指标，CSV 导出，需要时再上传备份。
-        </p>
-        <div class="btn-row" style="margin-top:22px">
-          <a class="btn btn-primary" href="download/PDGaitMonitor-5.3.0.apk" download>下载 APK · 11 MB</a>
-          <a class="btn btn-ghost" style="border-color:var(--line);color:var(--ink-2)" href="contact.html">装不上？</a>
+        <p class="desc">50 Hz 采集，端侧算指标，CSV 导出，需要时再上传备份。支持 Android 8.0 及以上。</p>
+        <div class="download-actions">
+          <a class="btn btn-primary btn-arrow" href="download/PDGaitMonitor-5.3.0.apk" download>下载 APK · 11 MB</a>
+          <a class="btn btn-ghost" href="contact.html">装不上？</a>
         </div>
-        <p style="font-size:12.5px;color:var(--muted);margin-top:14px">
-          服务器在境外，国内下载可能要几分钟。网络不好就换个时间再试，文件不会损坏。
-        </p>
+        <p class="download-note">服务器在境外，国内下载可能要几分钟。网络不好就换个时间再试，文件不会损坏。</p>
       </div>
       <div>
-        <ul class="meta-list">
+        <ul class="spec-list">
           <li><span>版本号</span><span>5.3.0 (50300)</span></li>
           <li><span>文件大小</span><span>10,746,473 字节</span></li>
           <li><span>最低系统</span><span>Android 8.0</span></li>
           <li><span>签名</span><span>release</span></li>
         </ul>
-        <p style="font-size:11.5px;color:var(--muted);word-break:break-all;margin-top:14px;font-family:ui-monospace,Consolas,monospace">
-          SHA-256<br>99b15531452170e2d4bbc82f469a4db5<br>bd7cdc515b7777f11bc7fc9048656573
-        </p>
+        <p class="hash">SHA-256<br>99b15531452170e2d4bbc82f469a4db5bd7cdc515b7777f11bc7fc9048656573</p>
       </div>
     </div>
   </div>
@@ -70,36 +68,39 @@
 
 <section class="section alt">
   <div class="wrap">
-    <div class="prose" style="max-width:860px">
-      <h2 style="margin-top:0">安装</h2>
-      <ol>
-        <li>点上面的按钮下载 APK。系统可能提示「未知来源应用」，允许当前浏览器或文件管理器安装。</li>
-        <li>首次打开时给传感器权限。App 不申请位置、通讯录和相册。</li>
-        <li>把手机放进口袋，位置固定，点「开始监测」。</li>
-        <li>等起步检测通过，按平时速度走两分钟以上。</li>
-        <li>停止后看汇总和曲线。需要原始数据就在详情页导出 CSV。</li>
-      </ol>
+    <div class="section-head reveal">
+      <div class="kicker">安装</div>
+      <h2>四步</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step reveal"><span>01</span><h3>下载</h3><p>点下载按钮。系统提示「未知来源应用」时，允许当前浏览器或文件管理器安装。</p></div>
+      <div class="flow-step reveal"><span>02</span><h3>给权限</h3><p>首次打开给传感器权限。不申请位置、通讯录和相册。</p></div>
+      <div class="flow-step reveal"><span>03</span><h3>放口袋</h3><p>裤子口袋或上衣口袋，位置固定。点开始，等起步检测通过。</p></div>
+      <div class="flow-step reveal"><span>04</span><h3>走两分钟</h3><p>按平时速度走。停下后自动计算，需要原始数据就导出 CSV。</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3>位置怎么选</h3>
+<section class="section">
+  <div class="wrap">
+    <div class="prose reveal">
+      <h2>位置怎么选</h2>
       <p>
-        上衣口袋重复性最好，适合做同一个人前后的趋势。裤子口袋更接近日常走路状态，但绝对值波动大。
+        上衣口袋重复性最好，适合做同一个人前后的趋势。裤子口袋更接近日常走路，但绝对值波动大。
         选一个就别在中途换，换位置等于换了一把尺子。
       </p>
 
-      <h3>权限</h3>
+      <h2>权限说明</h2>
       <ul>
-        <li>传感器 / 身体活动：读加速度和角速度，步态计算要用。</li>
-        <li>通知（可选）：记录时显示前台状态，降低被系统回收的概率。</li>
-        <li>网络（可选）：只在你点「上传到云端」时用到。</li>
+        <li><strong>传感器 / 身体活动：</strong>读加速度和角速度，步态计算要用。</li>
+        <li><strong>通知（可选）：</strong>记录时显示前台状态，降低被系统回收的概率。</li>
+        <li><strong>网络（可选）：</strong>只在你点上传时用到。</li>
       </ul>
 
-      <h3>升级和回滚</h3>
-      <p>
-        覆盖安装不会清掉本地记录。降级安装需要先卸载，本地数据会一起没，
-        所以降级前先导出 CSV。
-      </p>
+      <h2>升级和回滚</h2>
+      <p>覆盖安装不会清掉本地记录。降级安装要先卸载，本地数据会一起没，所以降级前先导出 CSV。</p>
 
-      <div class="callout warn" style="margin-top:24px">
+      <div class="callout warn">
         <strong>提醒：</strong>这不是医疗器械，不用于疾病诊断、治疗、监护或预防。
         身体不舒服或者有健康方面的疑问，找医生，不要看 App 的数字。
       </div>
@@ -107,43 +108,80 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section alt">
   <div class="wrap">
-    <div class="cta">
-      <h2>装好之后，先测一条</h2>
-      <p>同一位置、同一台手机、两分钟以上。有了基线，后面的变化才有参照。</p>
-      <a class="btn btn-primary" href="product.html">先看指标怎么算</a>
+    <div class="section-head center reveal">
+      <div class="kicker">常见问题</div>
+      <h2>安装相关</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>下载很慢，是坏了吗？</summary>
+        <p>不是。服务器在境外，国内速度不稳定。文件大小 11 MB，换个网络或换个时间段再试。</p>
+      </details>
+      <details>
+        <summary>提示“应用未安装”怎么办？</summary>
+        <p>先卸载旧版本再装，或者确认系统版本在 Android 8.0 以上。还不行就发邮件，带上手机型号和系统版本。</p>
+      </details>
+      <details>
+        <summary>装完闪退？</summary>
+        <p>多半是传感器权限没给。到系统设置里找到 PDGait，手动打开身体活动 / 传感器权限。</p>
+      </details>
+      <details>
+        <summary>以后怎么更新？</summary>
+        <p>回到这个页面下载新 APK，覆盖安装即可。本地记录会保留。</p>
+      </details>
     </div>
   </div>
 </section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>装好之后，先测一条</h2>
+      <p>同一位置、同一台手机、两分钟以上。有了基线，后面的变化才有参照。</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-arrow" href="product.html">看功能</a>
+        <a class="btn btn-light" href="research.html">看技术</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px">
-          <img src="assets/logo.png" alt="PDGait">
-          <span>PDGait<small>GAIT DATA TOOL</small></span>
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="">
+          <span>PDGait<small>Gait Analytics</small></span>
         </a>
-        <p>手机步态数据记录工具<br>个人开发者项目</p>
+        <p>手机步态数据采集与分析<br>个人开发者项目</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="product.html">指标与功能</a>
-        <a href="research.html">验证记录</a>
-        <a href="download.html">下载</a>
+        <div class="footer-links">
+          <a href="product.html">功能与指标</a>
+          <a href="research.html">技术与验证</a>
+          <a href="download.html">下载</a>
+        </div>
       </div>
       <div>
         <h4>支持</h4>
-        <a href="contact.html">联系</a>
-        <a href="privacy.html">隐私政策</a>
-        <a href="terms.html">用户协议</a>
+        <div class="footer-links">
+          <a href="contact.html">联系</a>
+          <a href="privacy.html">隐私政策</a>
+          <a href="terms.html">用户协议</a>
+        </div>
       </div>
       <div>
         <h4>合规</h4>
-        <a href="terms.html#medical">非医疗器械声明</a>
-        <a href="privacy.html#data">数据处理说明</a>
+        <div class="footer-links">
+          <a href="terms.html#medical">非医疗器械声明</a>
+          <a href="privacy.html#data">数据处理说明</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

@@ -3,26 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDGait · 用手机记录步态数据</title>
-<meta name="description" content="一个个人项目：用 Android 手机采集步态信号，计算步频、步幅、步时变异性与左右对称性，并记录哪些指标经得起重复测量。">
+<title>PDGait · 手机步态数据采集与分析</title>
+<meta name="description" content="PDGait 用手机内置传感器采集步态信号，在本地计算步频、步幅、步时变异与左右对称性等指标。无需额外硬件，数据默认不出手机。">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="home">
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="PDGait">
-      <span>PDGait<small>GAIT DATA TOOL</small></span>
+      <img src="assets/logo.png" alt="">
+      <span>PDGait<small>Gait Analytics</small></span>
     </a>
-    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <div class="nav-links">
-      <a href="product.html" data-nav="product">指标与功能</a>
-      <a href="research.html" data-nav="research">验证记录</a>
+      <a href="product.html" data-nav="product">产品</a>
+      <a href="research.html" data-nav="research">技术与验证</a>
       <a href="download.html" data-nav="download">下载</a>
       <a href="contact.html" data-nav="contact">联系</a>
-      <a class="nav-cta" href="download.html">装一个试试</a>
+      <a class="btn btn-primary btn-sm" href="download.html">下载 App</a>
     </div>
   </div>
 </nav>
@@ -30,130 +33,214 @@
 <header class="hero">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">PDGait / 个人项目</div>
-      <h1>手机放进口袋，<br>能测出多少步态信息</h1>
+      <div class="eyebrow"><span class="dot"></span>Mobile Gait Analytics</div>
+      <h1>一部手机，<br>记录你走路的<em>细节</em></h1>
       <p class="lead">
-        这个项目只关心一件事：用普通 Android 手机采到的数据，哪些指标经得起重复测量，哪些换个口袋就变了。
-        现在有部分答案，也有一堆没解决的问题。
+        PDGait 用手机内置传感器采集步态信号，在本地完成分析，输出步频、步幅、步时变异与左右对称性等指标。
+        不需要额外硬件，数据默认不出手机。
       </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="download.html">下载 Android 版</a>
-        <a class="btn btn-ghost" href="research.html">先看验证结果</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-arrow" href="download.html">下载 Android 版</a>
+        <a class="btn btn-ghost" href="research.html" style="color:#EAF7F6;border-color:rgba(255,255,255,.24)">了解核心技术</a>
       </div>
       <p class="hero-note"><strong>不是医疗器械</strong>，不用于疾病诊断、治疗或监护。</p>
     </div>
 
-    <div class="device" aria-hidden="true">
-      <div class="device-head">
-        <span><span class="dot"></span>正在记录</span>
-        <span>50 Hz</span>
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="phone" role="img" aria-label="App 记录界面示意">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="app-bar">
+            <span class="live"><i></i>正在记录</span>
+            <span>50 Hz</span>
+          </div>
+          <div class="app-time">04:32<span>mm:ss</span></div>
+          <div class="app-sub">约 512 步 · 有效时间 98%</div>
+          <svg class="app-wave" viewBox="0 0 260 54" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#0F9BA2" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"
+              points="0,32 10,28 20,34 30,22 40,27 50,18 60,25 70,14 80,22 90,12 100,24 110,17 120,29 130,20 140,26 150,13 160,22 170,17 180,30 190,23 200,27 210,18 220,24 230,16 240,27 250,21 260,25"/>
+          </svg>
+          <div class="app-grid">
+            <div class="app-cell"><b>112</b><i>步 / 分</i></div>
+            <div class="app-cell"><b>1.12</b><i>步幅 · m</i></div>
+            <div class="app-cell"><b>1.9%</b><i>步时变异</i></div>
+            <div class="app-cell"><b>2.4%</b><i>左右不对称</i></div>
+          </div>
+          <div class="app-foot">
+            <span>信号质量</span>
+            <span class="bar"><i></i></span>
+            <span>良好</span>
+          </div>
+        </div>
       </div>
-      <div class="device-num">04:32<span>mm:ss</span></div>
-      <div class="device-grid">
-        <div class="device-cell"><b>112</b><i>步 / 分</i></div>
-        <div class="device-cell"><b>1.12</b><i>步幅 · m</i></div>
-        <div class="device-cell"><b>1.9%</b><i>步时变异</i></div>
-        <div class="device-cell"><b>2.4%</b><i>左右不对称</i></div>
-      </div>
-      <svg class="spark" viewBox="0 0 320 56" preserveAspectRatio="none">
-        <polyline fill="none" stroke="#57E0B5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
-          points="0,38 14,34 28,40 42,26 56,31 70,22 84,29 98,18 112,25 126,15 140,28 154,20 168,33 182,24 196,30 210,17 224,26 238,21 252,34 266,27 280,31 294,22 308,28 320,24"/>
-      </svg>
     </div>
   </div>
 </header>
 
-<main>
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><b>50 Hz</b><span>传感器采样率</span></div>
+    <div class="trust-item"><b>10+</b><span>步态与变异性指标</span></div>
+    <div class="trust-item"><b>0</b><span>额外硬件</span></div>
+    <div class="trust-item"><b>端侧</b><span>计算与存储</span></div>
+  </div>
+</section>
+
+<main id="main">
 
 <section class="section">
   <div class="wrap">
-    <div class="stats">
-      <div class="stat"><b>50 Hz</b><span>手机 IMU 采样率</span></div>
-      <div class="stat"><b>1,356</b><span>段公开数据回放</span></div>
-      <div class="stat"><b>43</b><span>份合格的真实记录</span></div>
-      <div class="stat"><b>10</b><span>名健康受试者</span></div>
+    <div class="section-head reveal">
+      <div class="kicker">我们提供什么</div>
+      <h2>从采集到一份可复核的数据</h2>
+      <p>不只是一张图或一个分数。记录、计算、导出、备份，每一段都能追溯。</p>
+    </div>
+
+    <div class="bento">
+      <article class="bento-item feature reveal">
+        <div>
+          <div class="bento-num">01 / 采集</div>
+          <h3>放进口袋就能开始</h3>
+          <p>不用配对设备，也不用穿传感器。起步检测通过后自动开始，记录中可以暂停、锁屏、防误触。信号中断会当场提示。</p>
+        </div>
+        <div class="bento-visual">
+          <ul class="bento-list">
+            <li>裤子口袋 / 上衣口袋，固定位置</li>
+            <li>屏幕常亮或息屏都支持</li>
+            <li>断流、插值比例过高会标记</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bento-item reveal">
+        <div class="bento-num">02 / 分析</div>
+        <h3>不止步数和步频</h3>
+        <p>步时变异、左右相位与支撑期不对称、eLow / eHigh 能量、PCI、转身次数与时长，都能在同一次记录里看到。</p>
+      </article>
+
+      <article class="bento-item reveal">
+        <div class="bento-num">03 / 数据</div>
+        <h3>导得出，也留得住</h3>
+        <p>原始六轴数据一键导出 CSV，带表头和记录信息。需要长期保存时再逐条上传备份，不上传也能完整使用。</p>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="section alt">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">它做什么</div>
-      <h2>采集、算数、存起来</h2>
-      <p>没有云端分析，也没有 AI 诊断。手机算完就结束了，你看到的是原始信号和几组统计量。</p>
+    <div class="section-head reveal">
+      <div class="kicker">核心技术</div>
+      <h2>把一步拆成信号，再拆成指标</h2>
+      <p>三个关键设计，决定了这些数字在真实口袋里还剩多少可信度。</p>
     </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon">01</div>
-        <h3>采集</h3>
-        <p>手机放裤子口袋或上衣口袋，50 Hz 记录加速度和角速度。记录时屏幕可以关，误触会被锁掉。信号断了会当场提示，不会事后补一个漂亮的数。</p>
-      </div>
-      <div class="card">
-        <div class="icon">02</div>
-        <h3>算指标</h3>
-        <p>常规的步频、步幅、步速，加上步时变异、左右相位与支撑期不对称、eLow / eHigh 和 PCI。每个参数怎么算、窗口多长，都在指标页写着。</p>
-      </div>
-      <div class="card">
-        <div class="icon">03</div>
-        <h3>存数据</h3>
-        <p>默认只写手机本地数据库。要备份才点上传，一条一条来。上传地址十分钟过期，安装包里不放任何密钥。</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">一次记录</div>
-      <h2>大概是这样</h2>
-      <p>不需要注册，也不需要配对额外的传感器。</p>
-    </div>
-    <div class="flow">
-      <div class="flow-item">
-        <h3>放手机</h3>
-        <p>裤子口袋或上衣口袋，选一个。之后比较数据时别换位置，换位置等于换了一把尺子。</p>
-      </div>
-      <div class="flow-item">
-        <h3>开始走</h3>
-        <p>等起步检测通过，按平时速度走。两分钟以上比较稳，太短的记录噪声会盖过信号。</p>
-      </div>
-      <div class="flow-item">
-        <h3>看结果</h3>
-        <p>停下后自动计算。详情页有汇总指标、步速曲线和逐段明细，原始数据可以导出 CSV。</p>
-      </div>
-      <div class="flow-item">
-        <h3>要不要备份</h3>
-        <p>想长期保留就上传，不想就留在手机里。上传失败不影响本地记录，可以稍后再试。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="wrap">
-    <div class="grid-2" style="align-items:start">
-      <div>
-        <div class="kicker">数据</div>
-        <h2 style="font-size:30px;margin:0 0 14px">默认不出手机</h2>
-        <p style="color:var(--ink-2);margin:0 0 18px">
-          步态数据能反映一个人的行动习惯，我不觉得它应该默认上云。
-          采集和计算都在手机里完成，只有你点「上传到云端」，那一条记录才会发出去。
+    <div class="tech-row reveal">
+      <div class="tech-copy">
+        <h3>双频带能量分析</h3>
+        <p>
+          行走时，身体的低频摆动和落地的高频冲击混在同一段加速度里。
+          PDGait 把信号分成两个频带：eLow 反映重心起伏，eHigh 反映脚步冲击。
+          不需要先切出每一步，也能描述整段行走的状态。
         </p>
-        <div class="callout">
-          <strong>上传时发生的事：</strong>App 向云函数要一个一次性地址，云函数校验口令后签发十分钟有效的预签名 URL，
-          App 直接把文件 PUT 到私有存储桶。密钥只在云函数的环境变量里，安装包里没有。
+        <div class="tag-row">
+          <span class="tag">频域分解</span>
+          <span class="tag">自适应基线</span>
+          <span class="tag">不依赖步事件</span>
         </div>
       </div>
-      <div class="card" style="padding:30px">
-        <h3 style="margin-top:0">收了什么，没碰什么</h3>
-        <ul style="padding-left:20px;color:var(--ink-2);font-size:14.5px;line-height:1.9;margin:0">
-          <li><strong>收：</strong>你填的记录信息（可以写化名）、原始六轴数据、一个匿名安装 UUID。</li>
-          <li><strong>不碰：</strong>IMEI、Android ID、通讯录、位置、相册。</li>
-          <li><strong>没有：</strong>广告 SDK，第三方统计埋点。</li>
-          <li><strong>可删：</strong>本地记录随时删；云端数据可以来信申请清除。</li>
-        </ul>
+      <div class="tech-visual">
+        <svg viewBox="0 0 420 220" role="img" aria-label="高低频信号分离示意">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#0F9BA2" stop-opacity=".15"/>
+              <stop offset="1" stop-color="#0F9BA2" stop-opacity=".55"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="420" height="220" rx="12" fill="#F0F8F8"/>
+          <path d="M24 60 C 70 60, 70 30, 116 30 S 162 60, 208 60 S 254 30, 300 30 S 346 60, 392 60"
+                fill="none" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+          <text x="24" y="22" font-size="12" fill="#6C878C">eHigh · 落地冲击</text>
+          <path d="M24 130 C 80 130, 80 96, 136 96 S 192 130, 248 130 S 304 96, 360 96 S 400 118, 400 118"
+                fill="none" stroke="#F2A25C" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+          <text x="24" y="158" font-size="12" fill="#6C878C">eLow · 重心摆动</text>
+          <path d="M24 196 L 392 196" stroke="#C7DADB" stroke-width="1"/>
+          <text x="24" y="212" font-size="12" fill="#9BB0B3">同一段行走信号</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tech-row reverse reveal">
+      <div class="tech-copy">
+        <h3>变异性与左右对称</h3>
+        <p>
+          走了多少步只是总量。每一步之间稳不稳、左右两边差多少，才更接近步态本身。
+          我们从步间期算变异系数，从左右周期算相位差与支撑期差异，再用 PCI 看两侧协调。
+        </p>
+        <div class="tag-row">
+          <span class="tag">步时变异 CV</span>
+          <span class="tag">相位不对称</span>
+          <span class="tag">PCI</span>
+        </div>
+      </div>
+      <div class="tech-visual">
+        <svg viewBox="0 0 420 220" role="img" aria-label="左右步态周期示意">
+          <rect x="0" y="0" width="420" height="220" rx="12" fill="#F0F8F8"/>
+          <line x1="24" y1="110" x2="396" y2="110" stroke="#C7DADB" stroke-width="1"/>
+          <path d="M24 110 Q 52 62 80 110 T 136 110 T 192 110 T 248 110 T 304 110 T 360 110"
+                fill="none" stroke="#0F9BA2" stroke-width="2.5"/>
+          <path d="M52 110 Q 80 158 108 110 T 164 110 T 220 110 T 276 110 T 332 110 T 388 110"
+                fill="none" stroke="#F2A25C" stroke-width="2.5" opacity=".9"/>
+          <text x="24" y="42" font-size="12" fill="#0B7278">左</text>
+          <text x="24" y="192" font-size="12" fill="#B9763A">右</text>
+          <line x1="80" y1="94" x2="80" y2="126" stroke="#0B7278" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="108" y1="94" x2="108" y2="126" stroke="#B9763A" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="118" y="88" font-size="12" fill="#6C878C">相位差</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tech-row reveal">
+      <div class="tech-copy">
+        <h3>端侧计算，按需上传</h3>
+        <p>
+          所有滤波、峰值检测和指标计算都在手机里完成，离线也能用。
+          需要备份时，App 向云函数申请一个只对单条记录有效、十分钟过期的上传地址，
+          直接把文件写进私有存储桶。安装包里没有任何密钥。
+        </p>
+        <div class="tag-row">
+          <span class="tag">离线可用</span>
+          <span class="tag">预签名上传</span>
+          <span class="tag">最小权限</span>
+        </div>
+      </div>
+      <div class="tech-visual">
+        <svg viewBox="0 0 420 220" role="img" aria-label="上传链路示意">
+          <rect x="0" y="0" width="420" height="220" rx="12" fill="#F0F8F8"/>
+          <g font-size="11" fill="#35565B">
+            <rect x="24" y="84" width="86" height="52" rx="10" fill="#fff" stroke="#C7DADB"/>
+            <text x="47" y="114">手机 App</text>
+            <rect x="160" y="84" width="96" height="52" rx="10" fill="#fff" stroke="#C7DADB"/>
+            <text x="173" y="108">云函数</text>
+            <text x="173" y="123" font-size="11" fill="#6C878C">校验 + 签名</text>
+            <rect x="306" y="84" width="90" height="52" rx="10" fill="#fff" stroke="#C7DADB"/>
+            <text x="322" y="108">私有桶</text>
+            <text x="322" y="123" font-size="11" fill="#6C878C">COS</text>
+          </g>
+          <g stroke="#0F9BA2" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+            <line x1="110" y1="110" x2="154" y2="110"/>
+            <line x1="256" y1="110" x2="300" y2="110"/>
+          </g>
+          <defs>
+            <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 z" fill="#0F9BA2"/>
+            </marker>
+          </defs>
+          <text x="116" y="100" font-size="11" fill="#6C878C">申请地址</text>
+          <text x="262" y="100" font-size="11" fill="#6C878C">PUT 文件</text>
+          <text x="24" y="170" font-size="12" fill="#9BB0B3">密钥只存在云函数环境变量里，安装包内没有</text>
+        </svg>
       </div>
     </div>
   </div>
@@ -161,39 +248,125 @@
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
+      <div class="kicker">适用场景</div>
+      <h2>谁在用，怎么用</h2>
+    </div>
+    <div class="scenario-grid">
+      <article class="scenario reveal">
+        <div class="scenario-tag">个人</div>
+        <h3>日常步态记录</h3>
+        <p>每周走同一条路，看步频、步幅和变异性的长期变化。固定位置和手机，数据才有可比性。</p>
+      </article>
+      <article class="scenario reveal">
+        <div class="scenario-tag">科研</div>
+        <h3>标准化数据采集</h3>
+        <p>统一的 CSV 格式、明确的指标口径和可复现的导出流程，适合小样本探索性研究。</p>
+      </article>
+      <article class="scenario reveal">
+        <div class="scenario-tag">合作</div>
+        <h3>算法与方案评估</h3>
+        <p>提供指标定义、验证方法和原始数据格式说明，供同行评议、课程项目或合作评估使用。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="security-grid">
+      <div class="security-copy reveal">
+        <div class="kicker">数据安全</div>
+        <h2>默认留在手机里</h2>
+        <p>步态数据能反映一个人的行动习惯。采集和计算都在端侧完成，只有你主动点上传，那一条记录才会离开手机。</p>
+        <ul class="security-list">
+          <li>
+            <span class="dot-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+            <div><b>本地优先</b><span>原始信号和数据库都在应用私有目录，卸载即清除。</span></div>
+          </li>
+          <li>
+            <span class="dot-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5"/></svg></span>
+            <div><b>预签名上传</b><span>地址一次一签、十分钟失效，只能写这一条记录的路径。</span></div>
+          </li>
+          <li>
+            <span class="dot-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+            <div><b>匿名标识</b><span>只用随机安装 UUID，不读取 IMEI、Android ID 或位置。</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="security-visual reveal">
+        <div class="flow-mini">
+          <div class="flow-mini-item"><span class="n">1</span>点「上传到云端」</div>
+          <div class="flow-mini-item"><span class="n">2</span>云函数校验口令，签发一次性 URL</div>
+          <div class="flow-mini-item"><span class="n">3</span>App 直接 PUT 到私有存储桶</div>
+          <div class="flow-mini-item"><span class="n">4</span>记录本地标记为已备份</div>
+        </div>
+        <p style="margin:18px 0 0;font-size:12px;color:#7FA3A3;line-height:1.7">
+          上传失败不影响本地数据。可以换网络重试，也可以一直不传。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
       <div class="kicker">验证</div>
-      <h2>做验证时，有四件事比较意外</h2>
-      <p>完整方法和样本量在验证记录里。这里先说结论，包括对产品不利的那几条。</p>
+      <h2>数字不是凭空来的</h2>
+      <p>算法在公开数据集和真实手机采集上都做过验证。方法、样本量和已知局限写在技术页里。</p>
     </div>
-    <div class="grid-2">
-      <div class="card">
-        <h3 style="margin-top:0">口径不同，变异能差 2.78 倍</h3>
-        <p>同一批数据，按帧统计和按步统计算出来的步时变异系数，差 2.78 倍。两个数字都不算错，但放在一起比就没有意义。</p>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">换个口袋，eHigh 最多差 2.37 倍</h3>
-        <p>同一个人、同一台手机，只把手机从裤子口袋挪到上衣口袋，eHigh 的中位差异是 1.49 倍，最大 2.37 倍。</p>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">换台手机，eLow 中位差 0.60 倍</h3>
-        <p>同人同位置换机型，eLow 的中位比值是 0.60，eHigh 最大差 1.88 倍。跨设备比趋势，目前不成立。</p>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">只有一种组合够稳，能做前后比较</h3>
-        <p>分层算完最小可检测变化，只有「上衣口袋 + eHigh」的 MDC95 是 1.27 倍，噪声小于真实变化。其余组合，先别急着解读。</p>
-      </div>
+    <div class="validation-grid">
+      <div class="validation-card reveal"><b>1,356</b><span>段公开步态数据用于算法回放</span></div>
+      <div class="validation-card reveal"><b>22</b><span>名受试者的逐帧专家标注</span></div>
+      <div class="validation-card reveal"><b>10</b><span>名健康受试者的重复性研究</span></div>
     </div>
-    <p style="margin-top:26px"><a href="research.html">看验证方法和样本量 →</a></p>
+    <p style="color:var(--muted);font-size:14px">
+      <a href="research.html">查看验证方法与结论 →</a>
+    </p>
   </div>
 </section>
 
 <section class="section alt">
   <div class="wrap">
-    <div class="cta">
+    <div class="section-head center reveal">
+      <div class="kicker">常见问题</div>
+      <h2>你可能想问</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>需要注册账号吗？</summary>
+        <p>不需要。装好就能记录，所有数据默认在本地。</p>
+      </details>
+      <details>
+        <summary>支持 iPhone 吗？</summary>
+        <p>目前只有 Android 版。iOS 的传感器权限和后台策略不同，还没有做。</p>
+      </details>
+      <details>
+        <summary>数据会自动上传吗？</summary>
+        <p>不会。只有你在记录详情页主动点「上传到云端」，那一条记录才会发出去。</p>
+      </details>
+      <details>
+        <summary>步幅准不准？</summary>
+        <p>步幅是根据步频和身高估算的，不是测距。看趋势可以，别拿它当卷尺。</p>
+      </details>
+      <details>
+        <summary>能用来判断有没有病吗？</summary>
+        <p>不能。这是运动数据记录工具，不是医疗器械，不提供诊断、治疗或监护相关的结论。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta reveal">
       <h2>先测一条，看看数据长什么样</h2>
-      <p>第一次建议走上衣口袋，重复性最好。走两分钟，比走二十秒有用得多。</p>
-      <a class="btn btn-primary" href="download.html">下载 Android 版</a>
+      <p>不用注册，不用配对设备。第一次建议走上衣口袋，走两分钟以上。</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-arrow" href="download.html">下载 Android 版</a>
+        <a class="btn btn-light" href="contact.html">联系合作</a>
+      </div>
     </div>
   </div>
 </section>
@@ -203,29 +376,35 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px">
-          <img src="assets/logo.png" alt="PDGait">
-          <span>PDGait<small>GAIT DATA TOOL</small></span>
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="">
+          <span>PDGait<small>Gait Analytics</small></span>
         </a>
-        <p>手机步态数据记录工具<br>个人开发者项目</p>
+        <p>手机步态数据采集与分析<br>个人开发者项目</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="product.html">指标与功能</a>
-        <a href="research.html">验证记录</a>
-        <a href="download.html">下载</a>
+        <div class="footer-links">
+          <a href="product.html">功能与指标</a>
+          <a href="research.html">技术与验证</a>
+          <a href="download.html">下载</a>
+        </div>
       </div>
       <div>
         <h4>支持</h4>
-        <a href="contact.html">联系</a>
-        <a href="privacy.html">隐私政策</a>
-        <a href="terms.html">用户协议</a>
+        <div class="footer-links">
+          <a href="contact.html">联系</a>
+          <a href="privacy.html">隐私政策</a>
+          <a href="terms.html">用户协议</a>
+        </div>
       </div>
       <div>
         <h4>合规</h4>
-        <a href="terms.html#medical">非医疗器械声明</a>
-        <a href="privacy.html#data">数据处理说明</a>
+        <div class="footer-links">
+          <a href="terms.html#medical">非医疗器械声明</a>
+          <a href="privacy.html#data">数据处理说明</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

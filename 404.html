@@ -8,33 +8,34 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="404">
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="PDGait">
-      <span>PDGait<small>GAIT DATA TOOL</small></span>
+      <img src="assets/logo.png" alt="">
+      <span>PDGait<small>Gait Analytics</small></span>
     </a>
-    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <div class="nav-links">
-      <a href="product.html">指标与功能</a>
-      <a href="research.html">验证记录</a>
-      <a href="download.html">下载</a>
-      <a href="contact.html">联系</a>
-      <a class="nav-cta" href="download.html">装一个试试</a>
+      <a href="product.html" data-nav="product">产品</a>
+      <a href="research.html" data-nav="research">技术与验证</a>
+      <a href="download.html" data-nav="download">下载</a>
+      <a href="contact.html" data-nav="contact">联系</a>
+      <a class="btn btn-primary btn-sm" href="download.html">下载 App</a>
     </div>
   </div>
 </nav>
 
-<main class="section">
-  <div class="wrap" style="text-align:center;padding:80px 24px">
-    <div style="font-size:88px;font-weight:700;color:var(--teal);line-height:1;letter-spacing:-4px">404</div>
-    <h1 style="font-size:26px;margin:18px 0 10px">这一步没踩到</h1>
-    <p style="color:var(--muted);margin:0 0 26px">页面可能已移动或不存在。</p>
-    <div class="btn-row" style="justify-content:center">
-      <a class="btn btn-primary" href="index.html">回到首页</a>
-      <a class="btn btn-ghost" style="border-color:var(--line);color:var(--ink-2)" href="contact.html">联系</a>
-    </div>
+<main id="main" class="err-wrap">
+  <div class="err-code">404</div>
+  <h1>这一步没踩到</h1>
+  <p>页面可能已经移动，或者地址拼错了。</p>
+  <div class="hero-actions" style="justify-content:center">
+    <a class="btn btn-primary btn-arrow" href="index.html">回首页</a>
+    <a class="btn btn-ghost" href="contact.html">联系我</a>
   </div>
 </main>
 
